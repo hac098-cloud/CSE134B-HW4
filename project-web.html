@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Haolong Chen's computer science portfolio: NBA data analysis and HTML web development.">
+<title>NBA Case Study | Haolong Chen</title>
+<link rel="stylesheet" href="assets/structure.css">
+
+</head>
+<body>
+<header><p><a href="index.html">Haolong Chen</a> - Computer Science Student</p><nav aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="projects.html" aria-current="page">Projects</a></li><li><a href="resume.html">Resume</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>
+<main id="main-content">
+<article><h1>NBA workload, shooting efficiency, and availability</h1><p>A completed COGS 108 team research project.</p>
+<section><h2>Research question</h2><p>Do NBA players who play heavier minutes during dense stretches of the 2025-2026 regular season show lower shooting efficiency in later games and lower availability later in the season?</p><p>The initial hypothesis predicted lower efficiency and availability after heavier workload. <strong>The reported results did not support that hypothesis.</strong></p></section>
+<section><h2>My contribution</h2><p>I was credited with <b>project administration</b> and <b>experimental investigation</b>. These roles connect team coordination with the investigation of our research question. The analysis and conclusions below describe the team's work, rather than claiming that I independently wrote every part.</p></section>
+<section><h2>Data and definitions</h2><p>The report describes 26,651 player-game observations and 32 variables from NBA game logs. Important fields included minutes, game dates, points, shot attempts and shooting percentages.</p><p>Availability was measured through <em>game-log appearance rate</em>, not confirmed injury status. A missing appearance can reflect injury, rest, coaching choices, trades or role changes.</p><p>True shooting percentage was computed from points, field-goal attempts and free-throw attempts. Undefined shooting percentages associated with zero attempts were not automatically treated as corrupt data.</p></section>
+<section><h2>Analysis workflow</h2><ol><li>Inspect the data types, duplicate records, missing values and impossible values.</li><li>Construct workload, schedule and shooting-efficiency variables.</li><li>Explore later-game efficiency and later-season appearance rates.</li><li>Compare workload groups using Mann-Whitney U tests.</li><li>Fit a linear regression controlling for first-half median shooting efficiency.</li></ol><p>The team used Python, Pandas, NumPy, Matplotlib, SciPy and Statsmodels.</p></section>
+<section><h2>Reported findings</h2><h3>Shooting efficiency</h3><p>The group comparison found no statistically significant difference in second-half true shooting percentage (p = 0.678).</p><h3>Later availability</h3><p>The group with more heavy-dense first-half games had a higher reported second-half appearance rate: 0.817 versus 0.659 (p = 0.000026). This direction was opposite to the initial hypothesis.</p><h3>Regression</h3><p>First-half average minutes had a positive association with later appearance rate (coefficient = 0.0081, p &lt; 0.001), controlling for first-half median true shooting percentage. The model explained little of the variation: R-squared = 0.063.</p></section>
+<section><h2>Interpretation and limitations</h2><p>Selection bias is a plausible explanation: healthy, durable starters may both play more and remain available. <strong>This does not establish that heavy minutes improve durability.</strong> It also does not prove fatigue has no effect.</p><ul><li>Only one season was analyzed.</li><li>Appearance rate is an imperfect proxy for health.</li><li>Age, position, travel and detailed injury history were not fully controlled.</li><li>The analysis is observational, so causal effects cannot be isolated.</li></ul></section>
+<section><h2>What I learned</h2><p>The original hypothesis is a starting point, not the desired answer. A useful analysis must report an unexpected direction, explain the limitations of its measures, and distinguish evidence from a possible explanation.</p><p>A follow-up study could add official injury reports, multiple seasons and richer player-level controls.</p></section>
+<p>This page is a short portfolio summary of the supplied team report. It does not redistribute the full private report, raw notebooks, or teammate details.</p><p><a href="projects.html" aria-current="page">Back to Projects</a></p></article>
+</main>
+<footer><p><a href="contact.html">Contact</a> | <a href="https://github.com/hac098-cloud">GitHub</a> | <a href="experiments.html">Experiments</a></p><p>Haolong Chen - UC San Diego</p></footer>
+</body>
+</html>

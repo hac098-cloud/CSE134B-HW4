@@ -1,0 +1,183 @@
+/* Haolong Chen — https://github.com/hac098-cloud/CSE134B-HW3 */
+:root {
+  --background: #f4f6f8;
+  --surface: #fff;
+  --text: #243344;
+  --muted: #516173;
+  --accent: #175d68;
+  --accent-hover: #0b414a;
+  --border: #cbd5de;
+  --focus: #a84500;
+  --font-body: "Segoe UI", Arial, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --page-width: 68rem;
+  --space: 1.5rem;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--background); }
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* Child combinator: the shared page header, main content, and footer. */
+body > header, body > main, body > footer {
+  width: min(var(--page-width), calc(100% - 3rem));
+  margin-inline: auto;
+}
+body > header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem var(--space);
+  padding-block: var(--space);
+  border-bottom: 1px solid var(--border);
+}
+header p { margin: 0; color: var(--muted); font-size: 0.9375rem; }
+header p a { color: var(--text); font-weight: 700; }
+
+/* Descendant combinator: the navigation's existing list becomes a row. */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav a {
+  display: block;
+  padding: 0.4em 0.75em;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+/* Attribute selector: identify the current page in the shared navigation. */
+nav a[aria-current="page"] { background: var(--accent); color: var(--surface); }
+nav a:hover { background: #e1ecee; color: var(--accent-hover); }
+
+main { padding-block: 3.5rem; }
+h1, h2, h3 {
+  color: var(--text);
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h1 {
+  max-width: 24ch;
+  margin: 0 0 var(--space);
+  font-size: 3rem;
+  letter-spacing: -0.025em;
+}
+h2 { margin: 0 0 1rem; font-size: 1.875rem; }
+h3 { margin: var(--space) 0 0.75rem; font-size: 1.375rem; }
+p { max-width: 70ch; margin: 0 0 1rem; }
+/* Adjacent sibling combinator: emphasize each page's opening paragraph. */
+h1 + p { color: var(--muted); font-size: 1.1875rem; }
+section { margin-top: 2.5rem; }
+ul, ol { max-width: 70ch; padding-left: 1.5rem; }
+li + li { margin-top: 0.35rem; }
+nav li + li { margin-top: 0; }
+a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.08em;
+}
+a:hover { color: var(--accent-hover); text-decoration-thickness: 0.15em; }
+a:focus, button:focus, input:focus, textarea:focus, select:focus,
+audio:focus, audio:focus-within, video:focus, video:focus-within,
+iframe:focus, iframe:focus-within, summary:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.featured-work {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space);
+}
+.featured-work > h2 { grid-column: 1 / -1; margin-bottom: 0; }
+project-summary, .project-card {
+  display: block;
+  padding: var(--space);
+  border: 1px solid var(--border);
+  border-top: 0.25rem solid var(--accent);
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+project-summary > h3 { margin-top: 0; }
+main > article + article { margin-top: var(--space); }
+img, video, svg, canvas { max-width: 100%; height: auto; }
+picture { display: block; margin-block: var(--space); }
+picture img { display: block; border: 1px solid var(--border); border-radius: 0.5rem; }
+audio, iframe { max-width: 100%; }
+canvas, iframe { border: 1px solid var(--border); background: var(--surface); }
+dialog[open] {
+  position: static;
+  max-width: 100%;
+  margin: 1rem 0;
+  padding: var(--space);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: inherit;
+  background: var(--surface);
+}
+dialog h3 { margin-top: 0; }
+
+form { max-width: 42rem; }
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: var(--space);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+legend { padding-inline: 0.5em; font-weight: 700; }
+label { font-weight: 600; }
+input, textarea, select, button { font: inherit; }
+input, textarea, select {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.55em 0.75em;
+  border: 1px solid var(--muted);
+  border-radius: 0.3rem;
+  color: inherit;
+  background: var(--surface);
+}
+textarea { resize: vertical; }
+button {
+  max-width: 100%;
+  padding: 0.65em 1em;
+  border: 1px solid var(--accent);
+  border-radius: 0.3rem;
+  color: var(--surface);
+  background: var(--accent);
+  cursor: pointer;
+}
+button:hover { background: var(--accent-hover); }
+progress { max-width: 100%; accent-color: var(--accent); }
+body > footer {
+  padding-block: var(--space) 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+body > footer p:last-child { margin-bottom: 0; }
+
+@media (max-width: 42rem) {
+  body > header, body > main, body > footer { width: calc(100% - 2rem); }
+  body > header { flex-direction: column; align-items: stretch; }
+  nav ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  nav a { text-align: center; }
+  main { padding-block: 2rem; }
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.625rem; }
+  .featured-work { grid-template-columns: minmax(0, 1fr); }
+}

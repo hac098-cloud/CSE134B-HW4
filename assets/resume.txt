@@ -1,0 +1,10 @@
+Haolong Chen
+UC San Diego - Computer Science student
+Email: hac098@ucsd.edu
+GitHub: https://github.com/hac098-cloud
+
+COGS 108 team project: NBA workload, shooting efficiency, and availability
+Credited roles: Project Administration, Experimental Investigation
+
+CSE 134B: HTML-first personal portfolio (in development)
+This is a concise academic profile, not a complete employment resume.

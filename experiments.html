@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Haolong Chen's computer science portfolio: NBA data analysis and HTML web development.">
+<title>HTML Experiments | Haolong Chen</title>
+<link rel="stylesheet" href="assets/structure.css">
+<script src="assets/hello.js" defer></script>
+
+</head>
+<body>
+<header><p><a href="index.html">Haolong Chen</a> - Computer Science Student</p><nav aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="resume.html">Resume</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>
+<main id="main-content">
+<h1>HTML experiments</h1><p>Small, self-contained demonstrations of native HTML and the limited scripts permitted in this assignment.</p>
+<section><h2>Audio with source and fallback</h2><p>This original one-second demonstration is a 440 Hz tone with a gentle fade. There is no speech. Playback starts only when you choose it.</p><audio controls preload="none"><source src="assets/demo-tone.wav" type="audio/wav">Your browser does not support embedded audio. <a href="assets/demo-tone.wav">Download the tone</a>.</audio><p>Text alternative: a steady musical tone lasting one second.</p></section>
+<section><h2>Video with source and description</h2><video controls preload="none" width="240" height="160" poster="assets/basketball.png"><source src="assets/basketball-demo.mp4" type="video/mp4">Your browser does not support embedded video. <a href="assets/basketball-demo.mp4">Download the video</a>.</video><p>Video description: a silent, original three-second still illustration of a basketball beside a notebook. There is no dialogue or additional audio information.</p></section>
+<section><h2>Canvas</h2><canvas id="demo-canvas" width="240" height="160" role="img" aria-label="An outlined basketball with center lines.">An outlined basketball with vertical and horizontal center lines.</canvas><p>A small script draws this static illustration; it has no event handlers or interactions.</p><script>
+const ctx = document.getElementById('demo-canvas').getContext('2d');
+ctx.beginPath();
+ctx.arc(120,80,50,0,2*Math.PI);
+ctx.moveTo(70,80);
+ctx.lineTo(170,80);
+ctx.moveTo(120,30);
+ctx.lineTo(120,130);
+ctx.stroke();
+</script><noscript><p>The canvas drawing requires JavaScript; its text description remains available.</p></noscript></section>
+<section><h2>Inline SVG</h2><svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160" role="img" aria-labelledby="svg-title"><title id="svg-title">Basketball outline</title><circle cx="120" cy="80" r="50" fill="none" stroke="black"/><path d="M70 80h100M120 30v100" stroke="black"/></svg></section>
+<section><h2>Embedded project note</h2><iframe title="Short note on interpreting NBA availability" width="240" height="160" srcdoc="&lt;!doctype html&gt;&lt;html lang='en'&gt;&lt;head&gt;&lt;meta charset='utf-8'&gt;&lt;title&gt;Availability note&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Game-log appearance is not the same as confirmed injury status.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"></iframe><p>The same note outside the frame: game-log appearance is not the same as confirmed injury status.</p></section>
+<section><h2>Native dialog</h2><dialog open aria-labelledby="dialog-title"><h3 id="dialog-title">Research interpretation reminder</h3><p>Association alone does not prove causation.</p><button type="button">Acknowledged (demonstration only)</button></dialog><p>The dialog is shown using the native open attribute. No dialog interaction script is used.</p></section>
+<section><h2>Template</h2><p>A reusable project-card template is stored in the source below. Its content is intentionally inert and is not inserted into the page.</p><template id="project-card"><article><h3>Project title</h3><p>Project summary.</p></article></template></section>
+<section><h2>Console custom element</h2><p>The hello-world element logs "Hello World!" to the browser console. It does not change the DOM or insert visible content. Open DevTools Console to inspect the message.</p><hello-world></hello-world></section>
+<section><h2>Semantic CSS custom element</h2><project-summary><h3>A project summary container</h3><p>The project-summary element groups a concise project description. Its CSS is scoped to this custom tag. It works as a content container without JavaScript.</p></project-summary></section>
+</main>
+<footer><p><a href="contact.html">Contact</a> | <a href="https://github.com/hac098-cloud">GitHub</a> | <a href="experiments.html" aria-current="page">Experiments</a></p><p>Haolong Chen - UC San Diego</p></footer>
+</body>
+</html>
