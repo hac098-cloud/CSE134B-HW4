@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Haolong Chen's computer science portfolio: NBA data analysis and HTML web development.">
+<title>Contact (HTML) | Haolong Chen</title>
+<link rel="stylesheet" href="assets/structure.css">
+
+
+</head>
+<body>
+<header><p><a href="index.html">Haolong Chen</a> - Computer Science Student</p><nav aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="resume.html">Resume</a></li><li><a href="contact.html">Contact</a></li><li><a href="form-no-js.html" aria-current="page">Contact (HTML)</a></li><li><a href="form-with-js.html">Contact (JavaScript)</a></li></ul></nav></header>
+<main id="main-content" class="contact-page">
+<h1>Let's connect</h1>
+<p>A simple contact form powered by your browser, with no JavaScript.</p>
+<p id="submission-note">This demonstration sends your entries to <a href="https://httpbin.org">httpbin</a>, a public testing service, and displays them in its response. It does not email me or save a message here. Use sample contact details, not private information.</p>
+<p>Prefer live feedback? <a href="form-with-js.html">Open the JavaScript form</a>.</p>
+<form id="contact-form" action="https://httpbin.org/post" method="post" aria-describedby="submission-note">
+<fieldset><legend>Your message</legend>
+<p>All three visible fields are required. Name: 1 to 100 characters. Comments: 10 to 1,000 characters. Names in any language, including apostrophes and hyphens, are welcome.</p>
+<div class="form-field">
+<label for="name">Name (required)</label>
+<p class="field-hint" id="name-hint">Enter 1 to 100 characters.</p>
+<input type="text" id="name" name="name" autocomplete="name" required minlength="1" maxlength="100" data-label="Name" aria-describedby="name-hint">
+
+</div>
+<div class="form-field">
+<label for="email">Email (required)</label>
+<p class="field-hint" id="email-hint">Use an email address such as student@example.com.</p>
+<input type="email" id="email" name="email" autocomplete="email" required data-label="Email" aria-describedby="email-hint">
+
+</div>
+<div class="form-field">
+<label for="comments">Comments (required)</label>
+<p class="field-hint" id="comments-hint">Write 10 to 1,000 characters. The browser stops further entry at the limit.</p>
+<textarea id="comments" name="comments" rows="6" required minlength="10" maxlength="1000" data-label="Comments" aria-describedby="comments-hint"></textarea>
+
+</div>
+<input type="hidden" name="possible_bot" value="true">
+
+<button type="submit">Submit sample message</button>
+</fieldset>
+</form>
+</main>
+<footer><p><a href="contact.html">Contact</a> | <a href="https://github.com/hac098-cloud">GitHub</a> | <a href="experiments.html">Experiments</a></p><p>Haolong Chen - UC San Diego</p></footer>
+</body>
+</html>
